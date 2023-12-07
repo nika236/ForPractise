@@ -1,0 +1,10 @@
+<%= form_for [@room, @booking] do |form| %>
+
+  <%= form.label :start_date %>
+  <%= form.datetime_local_field :start_date, value: @booking.start_date&.strftime('%Y-%m-%dT%H:%M') %>
+
+  <%= form.label :end_date %>
+  <%= form.datetime_local_field :end_date, value: @booking.end_date&.strftime('%Y-%m-%dT%H:%M') %>
+
+  <%= form.submit "Create Booking" %>
+<% end %>

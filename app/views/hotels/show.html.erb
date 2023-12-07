@@ -1,0 +1,20 @@
+<%= render @hotel %>
+
+<h2>Room's for <%= @hotel.name %> </h2>
+<% @hotel.rooms.each do |room| %>
+  <h3>________________________________</h3>
+  <%= render 'rooms/room', room: room %>
+  <%= link_to "edit", edit_room_path(room) %>--
+  <%= link_to "Delete", room_path(room), data: {turbo_method: :delete, turbo_confirm: "Are you Sure?"}%>--
+  <%= link_to "Add Book For This Room", new_room_booking_path(room) %>--
+  <%= link_to "Booking list", room_path(room) %>
+  <h3>________________________________</h3>
+<% end %>
+
+<div>
+  <%= link_to "Edit this hotel", edit_hotel_path(@hotel) %>--
+  <%= link_to "Back to hotels", hotels_path %>--
+
+  <%= button_to "Destroy this hotel", @hotel, method: :delete %>--
+  <%= link_to "Add room For this Hotel", new_hotel_room_path(@hotel) %>
+</div>

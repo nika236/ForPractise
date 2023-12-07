@@ -1,0 +1,9 @@
+<%= render 'rooms/room', room: @room %>
+
+
+
+<% @room.bookings.each do |booking| %>
+  <h3>___________________________________</h3>
+<%= render 'bookings/booking', booking: booking  %>
+
+<% end %>

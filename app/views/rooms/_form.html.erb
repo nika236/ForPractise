@@ -1,0 +1,21 @@
+<%= form_for [@hotel , @room], html: { class: 'form' } do |form| %>
+
+  <div>
+    <%= form.label :room_code%>
+    <%= form.text_field :room_code%>
+  </div>
+
+  <div>
+    <%= form.label :description%>
+    <%= form.text_area :description%>
+  </div>
+
+  <div>
+    <%= form.label :price_per_night%>
+    <%= form.number_field :price_per_night%>
+  </div>
+
+  <div>
+    <%= form.submit 'Save Room'%>
+  </div>
+<% end %>

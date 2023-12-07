@@ -1,0 +1,5 @@
+<h1>Edit Room For <%= @room.hotel.name %> Hotel</h1>
+
+<%= render 'shared/errors', obj: @room %>
+<%= render 'rooms/form' %>
+<%= link_to 'Back to Hotel', :back %>
